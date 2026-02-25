@@ -1,0 +1,44 @@
+{
+  "name": "truenas-client",
+  "version": "1.0.0",
+  "description": "A lightweight TypeScript client for the TrueNAS WebSocket API (JSON-RPC 2.0)",
+  "main": "dist/index.cjs",
+  "type": "module",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dauryg/truenas-client.git"
+  },
+  "keywords": [
+    "truenas"
+  ],
+  "author": "daury guzman <me@dauryguzman.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dauryg/truenas-client/issues"
+  },
+  "homepage": "https://github.com/dauryg/truenas-client#readme",
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=21"
+  }
+}
